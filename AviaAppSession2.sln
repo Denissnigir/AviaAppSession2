@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AviaAppSession2", "AviaAppSession2\AviaAppSession2.csproj", "{B94243B6-367D-4B17-866E-62B3B19E8125}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B94243B6-367D-4B17-866E-62B3B19E8125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B94243B6-367D-4B17-866E-62B3B19E8125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B94243B6-367D-4B17-866E-62B3B19E8125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B94243B6-367D-4B17-866E-62B3B19E8125}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {308C7D1F-6DD1-499C-93E7-2F3111B660BA}
+	EndGlobalSection
+EndGlobal
