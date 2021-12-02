@@ -1,0 +1,120 @@
+﻿<Window x:Class="AviaAppSession2.Windows.ScheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviaAppSession2.Windows"
+        mc:Ignorable="d"
+        Title="ScheduleWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <GroupBox Margin="10" Header="Filter by">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="From" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0" FontSize="18"/>
+                            <ComboBox x:Name="DepartmentAirportsCB" DisplayMemberPath="IATACode" Grid.Column="1" Height="30" Width="130"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="To" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0" FontSize="18"/>
+                            <ComboBox x:Name="ArrivalAirportsCB" DisplayMemberPath="IATACode" Grid.Column="1" Height="30" Width="130"/>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Sort by" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0" FontSize="18"/>
+                            <ComboBox x:Name="DateCB" Grid.Column="1" Height="30" Width="130"/>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Outbound" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0" FontSize="18"/>
+                            <DatePicker Name="OutboundDP" Grid.Column="1" Height="30" Width="130"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Text="Flight number" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0, 0, 10, 0" FontSize="12"/>
+                            <TextBox x:Name="FlightNumberTB" Grid.Column="1" Height="30" Width="130"/>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Button Height="30" Width="200" Content="Apply" Click="ApplyClick"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <DataGrid Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" x:Name="ScheduleDG">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="{Binding GetColor}"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=d}" Width="*"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding Time}" Width="*"/>
+                <DataGridTextColumn Header="From" Binding="{Binding GetDepartureAirport}" Width="*"/>
+                <DataGridTextColumn Header="To" Binding="{Binding GetArrivalAirport}" Width="*"/>
+                <DataGridTextColumn Header="Flight number" Binding="{Binding FlightNumber}" Width="*"/>
+                <DataGridTextColumn Header="Aircraft" Binding="{Binding AircraftID}" Width="*"/>
+                <DataGridTextColumn Header="Economy price" Binding="{Binding GetEconomPrice}" Width="*"/>
+                <DataGridTextColumn Header="Business price" Binding="{Binding GetBusinessPrice}" Width="*"/>
+                <DataGridTextColumn Header="First class price" Binding="{Binding GetFirstClassPrice}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Height="30" Width="150" Content="Cancel flight" Click="CancelFlight"/>
+            <Button Height="30" Width="150" Content="Edit flight" Grid.Column="1" Click="EditFlight"/>
+            <Button Height="30" Width="150" Content="Import changes" Grid.Column="2" Click="ImportChanges"/>
+        </Grid>
+    </Grid>
+</Window>

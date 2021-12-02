@@ -1,0 +1,71 @@
+﻿<Window x:Class="AviaAppSession2.Windows.ImportChangesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviaAppSession2.Windows"
+        mc:Ignorable="d"
+        Title="Applu Schedule Changes" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Please select the text file with the changes" VerticalAlignment="Center" FontSize="20" Margin="10, 0, 0, 0"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="FileNameTB" IsReadOnly="True" Width="350" Height="35" HorizontalAlignment="Right" Margin="0, 0, 10, 0"/>
+                <Button Grid.Column="1" Height="35" Width="200" Content="Import" Click="ImportFile"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <GroupBox Margin="10" Header="Results">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Successful Changes Applied:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" FontSize="20"/>
+                        <TextBlock Grid.Column="1" Name="ChangesAppliedTB" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" FontSize="20"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Duplicate Records Discarded:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" FontSize="20"/>
+                        <TextBlock Grid.Column="1" Name="DuplicateRecordsTB" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" FontSize="20"/>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Record with missing fields discarded:" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" FontSize="20"/>
+                        <TextBlock Grid.Column="1" Name="MissingFieldsTB" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0, 0, 10, 0" FontSize="20"/>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</Window>

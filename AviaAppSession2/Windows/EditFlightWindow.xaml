@@ -1,0 +1,85 @@
+﻿<Window x:Class="AviaAppSession2.Windows.EditFlightWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AviaAppSession2.Windows"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        mc:Ignorable="d"
+        Title="EditFlightWindow" Height="450" Width="800">
+    <Grid x:Name="ScheduleGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <GroupBox Margin="20" Header="FLight route">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{Binding GetFrom}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                    <TextBlock Text="{Binding GetTo}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="1"/>
+                    <TextBlock Text="{Binding GetAircraft}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="2"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Date" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                <DatePicker SelectedDate="{Binding Date}" Grid.Column="1" Height="35" Width="130"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.6*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Time" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+                <WindowsFormsHost Grid.Column="1" Height="35" Width="130" Background="Transparent">
+                    <wf:MaskedTextBox x:Name="TimeMB" Mask="99:99"  Height="35" Width="130"/>
+                </WindowsFormsHost>
+
+            </Grid>
+
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Economy price: $" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                <TextBox PreviewTextInput="TextBox_PreviewTextInput" Text="{Binding EconomyPrice}" Grid.Column="1" Height="35" Width="130"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.4*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Height="35" Width="150" Content="Update" HorizontalAlignment="Right" Margin="0, 0, 10, 0" Click="UpdateInfo"/>
+            <Button Height="35" Width="150" Content="Cancel" Grid.Column="1" Click="Cancel"/>
+        </Grid>
+
+    </Grid>
+</Window>

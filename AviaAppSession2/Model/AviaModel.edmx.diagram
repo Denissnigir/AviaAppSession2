@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b0e05c8c019a42fdb0429716d0ce7cf7" Name="Diagram1">
+        <EntityTypeShape EntityType="Session_2_GGModel.Aircrafts" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Airports" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Countries" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Offices" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Roles" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Routes" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Schedules" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Session_2_GGModel.Users" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Schedule_AirCraft" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_AirPort_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Routes_Airports2" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Routes_Airports3" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Office_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Users_Offices" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="Session_2_GGModel.FK_Schedule_Routes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
